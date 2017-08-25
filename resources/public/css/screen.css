@@ -1,0 +1,192 @@
+#app {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.world {
+  display: grid;
+  grid-auto-columns: 20px;
+  grid-gap: 2px;
+  grid-auto-rows: 20px;
+  padding: 20px;
+  overflow: scroll;
+}
+
+.world div {
+  text-align: center;
+  z-index: 0;
+}
+
+.world div:hover {
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+
+div.player {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+div.top-bar {
+  min-height: 40px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: red;
+}
+
+div.top-bar div {
+  display: inline;
+}
+
+div.left-bar {
+  min-width: 80px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: red;
+}
+
+div.right-bar {
+  min-width: 200px;
+  border-width: 1px;
+  border-color: red;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  border-style: solid;
+  padding-right: 20px;
+  display: flex;
+}
+
+div.right-bar .inputs input {
+  width: 100%;
+  min-height: 100px;
+}
+
+div.right-bar .outputs .p-container {
+  min-width: 300px;
+  overflow: scroll;
+  max-height: 300px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+
+div.footer {
+  border-style: solid;
+  border-width: 1px;
+  border-color: red;
+}
+
+@keyframes dotpulse {
+
+  from {
+    transform: scale(0.75);
+    z-index: -2;
+  }
+  
+  to {
+    transform: scale(1.25);
+    z-index: 2;
+  }
+
+}
+
+.world-dot {
+  animation: dotpulse 1s infinite alternate;
+}
+
+.palettes {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-width: 240px;
+}
+
+.palettes p {
+  text-align: center;
+}
+
+.palettes div {
+  border-style: solid;
+  grid-gap: 4px;
+  grid-auto-rows: 36px;
+  padding-right: 10%;
+  border-width: 1px;
+  padding-left: 10%;
+  border-color: black;
+  display: grid;
+  grid-template-columns: repeat(5, 36px);
+}
+
+.palettes div div {
+  border-style: none;
+}
+
+.palettes div button.dot-left:before {
+  line-height: 2.5;
+  color: rgba(0,0,0,1);
+  font-weight: 600;
+  content: "⇠";
+  width: 100%;
+  background: rgba(255,255,255,0.09);
+  position: relative;
+  height: 100%;
+  left: -20px;
+}
+
+.palettes div button.dot-right:before {
+  line-height: 2.5;
+  color: rgba(0,0,0,1);
+  font-weight: 600;
+  content: "⇢";
+  width: 100%;
+  background: rgba(255,255,255,0.09);
+  position: relative;
+  height: 100%;
+  left: 20px;
+}
+
+.palettes div button.dot-up:before {
+  line-height: 2.5;
+  width: 100%;
+  top: -20px;
+  height: 100%;
+  position: relative;
+  font-weight: 600;
+  content: "⇡";
+  background: rgba(255,255,255,0.09);
+  color: rgba(0,0,0,1);
+  left: 0px;
+}
+
+.palettes div button.dot-down:before {
+  line-height: 2.5;
+  width: 100%;
+  top: 20px;
+  height: 100%;
+  position: relative;
+  font-weight: 600;
+  content: "⇣";
+  background: rgba(255,255,255,0.09);
+  color: rgba(0,0,0,1);
+  left: 0px;
+}
+
+button.selected {
+  border-style: solid;
+  border-color: #222222;
+  border-width: 2px;
+}
+
+div.selected {
+  background-color: #AAAAAA;
+}
+
+div.main-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
